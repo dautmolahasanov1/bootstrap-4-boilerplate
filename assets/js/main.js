@@ -45,6 +45,7 @@ $( document ).ready(function() {
         tallest; //create variable to make note of the tallest slide
     
     if (items.length) {
+        console.log(items.length)
         function normalizeHeights() {
             items.each(function() { //add heights to array
                 heights.push($(this).height()); 
