@@ -53,7 +53,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="row">
-            <div class="mobile-only mobile-menu collapse" id="mobile-menu">
+            <div class="lg-up-hidden mobile-menu collapse" id="mobile-menu">
                 <ul class="navbar-nav">
                     <li class="nav-item" data-toggle="collapse" data-target="#mobile-menu">
                         <a class="nav-link active" href="#what-we-do">WHAT WE DO</a>
@@ -142,7 +142,7 @@
                         <p>All organisations have an ever-increasing requirement for digital development. Whilst most currently fulfil this through outsourcing to digital agencies, many are starting to consider other alternatives. Our blend of on and offshore services enables us to provide a solution that’s more cost-effective than agencies without sacrificing on experience or expertise.</p>
                         <p>Our team of Account and Project Managers based in London will work with you to make sure you’re totally satisfied on a day-to-day basis. Meanwhile, our team of highly skilled and experienced developers based in Sofia will deliver the very best practice and quality assurance.</p>
                     </div>
-                    <div class="image-wrapper col-12 pl-0 pr-0 mobile-only">
+                    <div class="image-wrapper col-12 pl-0 pr-0 lg-up-hidden">
                         <img src="/assets/img/Done_dev_image.jpg" alt="">
                     </div>
                 </div>
@@ -335,7 +335,7 @@
                                 <h2>IOSH</h2>
                                 <p>We designed, developed and delivered and a brand-new website for IOSH.</p>
                                 <p>Technology – Umbraco CMS</p>
-                                <a href="https://www.iosh.ac.uk" target="_blank">https://www.iosh.ac.uk</a>
+                                <a href="https://www.iosh.co.uk" target="_blank">https://www.iosh.co.uk</a>
                             </div>
                             
                             <div class="image-holder col-lg-6">
@@ -517,7 +517,7 @@
                             -->
                                 
                     </div>
-                    <div class="image-wrapper pl-0 pr-0 col-12 mobile-only">
+                    <div class="image-wrapper pl-0 pr-0 col-12 lg-up-hidden">
                         <img src="/assets/img/iphone@3x.jpg" alt="">
                     </div>
                 </div>
@@ -531,20 +531,35 @@
                         <h4>CLIENTS</h4>
                     </div>
                     
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="container clients-container">
                             <div class="row">
-                                <div class="client col-6">
+                                <div class="client col-6 col-sm-4 col-md-3">
                                     <img src="/assets/img/kpmg.png" width="100px" alt="">
                                 </div>
-                                <div class="client col-6">
+                                <div class="client col-6 col-sm-4 col-md-3">
                                     <img src="/assets/img/AQ_office_door_sign_black.png" width="114px" alt="">
                                 </div>
-                                <div class="client col-6">
+                                <div class="client col-6 col-sm-4 col-md-3">
+                                    <img src="/assets/img/not-good/british_council_take_ielts.jpg" width="100px" alt="">
+                                </div>
+                                <div class="client col-6 col-sm-4 col-md-3">
+                                    <img src="/assets/img/not-good/Kennedys.png" width="114px" alt="">
+                                </div>
+                                <div class="client col-6 col-sm-4 col-md-3">
+                                    <img src="/assets/img/not-good/Varkeys.png" width="114px" alt="">
+                                </div>
+                                <div class="client col-6 col-sm-4 col-md-3">
                                     <img src="/assets/img/offthetopofmyhead-black.png" width="124px" alt="">
                                 </div>
-                                <div class="client col-6">
+                                <div class="client col-6 col-sm-4 col-md-3">
                                     <img src="/assets/img/TrilliumLogo.png" width="115px" alt="">
+                                </div>
+                                <div class="client col-6 col-sm-4 col-md-3">
+                                    <img src="/assets/img/not-good/RCSSD.jpg" width="100px" alt="">
+                                </div>
+                                <div class="client col-6 col-sm-4 col-md-3 mobile-hidden md-up-hidden">
+                                    <img src="/assets/img/not-good/sheffield-hallam-university.jpg" width="114px" alt="">
                                 </div>
                             </div>
                         </div>
@@ -600,6 +615,8 @@
                 }
             }
         })
+
+        $('.carousel').bcSwipe({ threshold: 50 });
     });
 </script>
 </body>

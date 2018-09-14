@@ -45,7 +45,6 @@ $( document ).ready(function() {
         tallest; //create variable to make note of the tallest slide
     
     if (items.length) {
-        console.log(items.length)
         function normalizeHeights() {
             items.each(function() { //add heights to array
                 heights.push($(this).height()); 
@@ -68,4 +67,60 @@ $( document ).ready(function() {
     
     
 });
+
+(function($) {
+    $.fn.bcSwipe = function(settings) {
+      var config = { threshold: 50 };
+      if (settings) {
+        $.extend(config, settings);
+      }
+  
+      this.each(function() {
+        var stillMoving = false;
+        var start;
+
+        console.log(0)
+  
+        if ('ontouchstart' in document.documentElement) {
+          this.addEventListener('touchstart', onTouchStart, false);
+        }
+  
+        function onTouchStart(e) {
+            console.log(1)
+          if (e.touches.length == 1) {
+            start = e.touches[0].pageX;
+            stillMoving = true;
+            this.addEventListener('touchmove', onTouchMove, false);
+          }
+        }
+  
+        function onTouchMove(e) {
+            console.log(2)
+          if (stillMoving) {
+            var x = e.touches[0].pageX;
+            var difference = start - x;
+            if (Math.abs(difference) >= config.threshold) {
+              cancelTouch();
+              if (difference > 0) {
+                console.log(3)
+                $(this).carousel('next');
+              }
+              else {
+                console.log(4)
+                $(this).carousel('prev');
+              }
+            }
+          }
+        }
+  
+        function cancelTouch() {
+          this.removeEventListener('touchmove', onTouchMove);
+          start = null;
+          stillMoving = false;
+        }
+      });
+  
+      return this;
+    };
+  })(jQuery);
 //# sourceMappingURL=main.js.map

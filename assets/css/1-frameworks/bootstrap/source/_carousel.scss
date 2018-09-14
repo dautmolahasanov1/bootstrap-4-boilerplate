@@ -38,6 +38,9 @@
             }
             h2 {
                 margin-top: 20px;
+                @include media-breakpoint-down(md) {
+                    font-size: 2.2em;
+                }
             }
             h4 {
                 margin-top: 0;
@@ -207,9 +210,9 @@
 
 .carousel-indicators {
     position: absolute;
-    right: 0;
+    right: 45px;
     bottom: 10px;
-    left: 0;
+    left: 45px;
     z-index: 15;
     display: flex;
     justify-content: center;

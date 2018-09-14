@@ -36,12 +36,27 @@ h4 {
     }
 }
 
-.mobile-only {
+.lg-up-hidden {
     @include media-breakpoint-up(lg) {
         display: none;
         visibility: hidden;
     }
 }
+
+.md-up-hidden {
+    @include media-breakpoint-up(md) {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.mobile-hidden {
+    @include media-breakpoint-down(xs) {
+        display: none;
+        visibility: hidden; 
+    }
+}
+
 
 .jumbotron {
     padding-left: 0;
@@ -229,6 +244,7 @@ th.orange {
         .client {
             padding-bottom: 75px;
             opacity: 0.5;
+            text-align: center;
         }
     }
 }
