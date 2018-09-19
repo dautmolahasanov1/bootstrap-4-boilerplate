@@ -55,16 +55,12 @@ $( document ).ready(function() {
   
       this.each(function() {
         var stillMoving = false;
-        var start;
-
-        console.log(0)
-  
+        var start;  
         if ('ontouchstart' in document.documentElement) {
           this.addEventListener('touchstart', onTouchStart, false);
         }
   
         function onTouchStart(e) {
-            console.log(1)
           if (e.touches.length == 1) {
             start = e.touches[0].pageX;
             stillMoving = true;
@@ -73,18 +69,15 @@ $( document ).ready(function() {
         }
   
         function onTouchMove(e) {
-            console.log(2)
           if (stillMoving) {
             var x = e.touches[0].pageX;
             var difference = start - x;
             if (Math.abs(difference) >= config.threshold) {
               cancelTouch();
               if (difference > 0) {
-                console.log(3)
                 $(this).carousel('next');
               }
               else {
-                console.log(4)
                 $(this).carousel('prev');
               }
             }
